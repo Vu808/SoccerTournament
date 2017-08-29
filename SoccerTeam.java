@@ -5,16 +5,21 @@ public class SoccerTeam {
 	private static int losses;
 	private static int ties;
 	private static int points;
+	private static int gamesplayed;
+	private static int goals;
 	
 	
 	public void played(SoccerTeam opponent, int myScore, int opponentScore) {
 		if (myScore > opponentScore) {
 			wins++;
+			
 		} if (myScore < opponentScore) {
 			losses++;
 		} if (myScore == opponentScore) {
 			ties++;
 		}
+		gamesplayed++;
+		goals = myScore + opponentScore;
 	}
 	
 	public int getWins() {
@@ -45,8 +50,21 @@ public class SoccerTeam {
 		return points;
 	}
 	
-	public void resetPoints() {
+	public static void resetPoints() {
 	points = 0;
 	
 	}
+	
+	public static int gamesplayed() {
+		return gamesplayed;
+	} 
+	public static int goalsmade() {
+		return goals;
+	}
+	
+	public static void startTournament() {
+		gamesplayed = 0;
+		goals = 0;
+	}
+	
 }
