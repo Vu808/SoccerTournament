@@ -1,10 +1,10 @@
 
 public class SoccerTeam {
 
-	private static int wins;
-	private static int losses;
-	private static int ties;
-	private static int points;
+	private int wins;
+	private  int losses;
+	private  int ties;
+	private  int points;
 	private static int gamesplayed;
 	private static int goals;
 	
@@ -20,7 +20,9 @@ public class SoccerTeam {
 		}
 		gamesplayed++;
 		goals = myScore + opponentScore;
-	}
+		}
+		
+	
 	
 	public int getWins() {
 		return wins;
@@ -35,10 +37,10 @@ public class SoccerTeam {
 		return points;
 	}
 	public void setOpponentWins(int opponentWins) {
-		this.losses = opponentWins;
+		this.wins = opponentWins;
 	} 
 	public void setOpponentLosses(int opponentLosses) {
-		this.wins = opponentLosses;
+		this.losses = opponentLosses;
 	} public void setOpponentTies(int opponentTies) {
 		this.ties = opponentTies;
 	}
@@ -50,8 +52,11 @@ public class SoccerTeam {
 		return points;
 	}
 	
-	public static void resetPoints() {
-	points = 0;
+	public void resetPoints() {
+		wins = 0;
+		losses = 0;
+		ties = 0;
+		points = 0;
 	
 	}
 	
